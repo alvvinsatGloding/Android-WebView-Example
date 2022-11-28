@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     ProgressBar progressBar;
     SwipeRefreshLayout swipeRefreshLayout;
 
-    String url = "http://codeflarelimited.com";
+    String url = "https://app.mirai.education/staging/app/enjoyOrigami/1.12/index.html";
 
 //    final String filename= URLUtil.guessFileName(URLUtil.guessUrl(url));
 
@@ -60,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void run() {
                         swipeRefreshLayout.setRefreshing(false);
+                        webView.clearCache(true);
                         webView.loadUrl(url);
                     }
                 },  3000);
